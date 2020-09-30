@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useFetchGifs } from "../hooks/useFetchGifs";
-import { GifGridItem } from "../components/GifGridItem";
+import GifGridItem from "../components/GifGridItem";
 
-export const GifGrid = ({ category }) => {
-  const { data: images, loading } = useFetchGifs(category);
+function GifGrid({ category }) {
+  const { data, loading } = useFetchGifs(category);
+  const [images, setImages] = useState(data);
+
+  useEffect(() => {
+    setImages(data);
+  }, [data]);
+
+  const deleteImage = (id) => {
+    setImages(images.filter((i) => i.id !== id));
+  };
 
   return (
     <>
@@ -15,10 +24,18 @@ export const GifGrid = ({ category }) => {
       <div>
         <ol className="card-grid">
           {images.map((item) => {
-            return <GifGridItem key={item.id} {...item} />;
+            return (
+              <GifGridItem
+                key={item.id}
+                img={item}
+                deleteImageG={deleteImage}
+              />
+            );
           })}
         </ol>
       </div>
     </>
   );
-};
+}
+
+export default GifGrid;

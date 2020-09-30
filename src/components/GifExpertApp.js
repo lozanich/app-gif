@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import AddCategory from "./AddCategory";
-import { GifGrid } from "./../components/GifGrid";
+import GifGrid from "./../components/GifGrid";
 
 function GifExpertApp() {
   const [categories, setCategories] = useState(["Dragon ball"]);
