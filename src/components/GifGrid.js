@@ -1,24 +1,24 @@
-import React, { useState, useEffect } from "react";
-// import { GifGridItem } from "./GifGridItem";
-// import { getGifs } from "./../helpers/getGifs";
+import React from "react";
+import { useFetchGifs } from "../hooks/useFetchGifs";
+import { GifGridItem } from "../components/GifGridItem";
 
 export const GifGrid = ({ category }) => {
-  // const [images, setImages] = useState([]);
-
-  // useEffect(() => {
-  //   getGifs(category).then(setImages);
-  // }, [category]);
+  const { data: images, loading } = useFetchGifs(category);
 
   return (
     <>
-      <h2>{category}</h2>
-      {/* <div>
+      <h2 className="animate__fadeInDown">{category}</h2>
+      {loading && (
+        <div className="animate__animated animate__flash">Cargando</div>
+      )}
+
+      <div>
         <ol className="card-grid">
           {images.map((item) => {
             return <GifGridItem key={item.id} {...item} />;
           })}
         </ol>
-      </div> */}
+      </div>
     </>
   );
 };
