@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useFetchGifs } from "../hooks/useFetchGifs";
 import GifGridItem from "../components/GifGridItem";
+import PropTypes from "prop-types";
 
 function GifGrid({ category }) {
   const { data, loading } = useFetchGifs(category);
@@ -25,11 +26,7 @@ function GifGrid({ category }) {
         <ol className="card-grid">
           {images.map((item) => {
             return (
-              <GifGridItem
-                key={item.id}
-                img={item}
-                deleteImageG={deleteImage}
-              />
+              <GifGridItem key={item.id} {...item} deleteImageG={deleteImage} />
             );
           })}
         </ol>
@@ -37,5 +34,9 @@ function GifGrid({ category }) {
     </>
   );
 }
+
+GifGrid.propTypes = {
+  category: PropTypes.string.isRequired,
+};
 
 export default GifGrid;

@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas al componente GridExpertApp Deberia de ser el snapshot de GridExpertApp 1`] = `
+<Fragment>
+  <h2>
+    Gif expert app
+  </h2>
+  <hr />
+  <AddCategory
+    setCategories={[Function]}
+  />
+  <ol />
+</Fragment>
+`;

@@ -1,15 +1,22 @@
 import React from "react";
+import PropsTypes from "prop-types";
 
-function GifGridItem({ img, deleteImageG }) {
+function GifGridItem({ id, title, url, deleteImageG }) {
   return (
     <div className="card animate__animated animate__bounce">
-      <img src={img.url} alt={img.title} />
-      <p>{img.title}</p>
-      <button onClick={() => deleteImageG(img.id)} className="button-primary">
+      <img src={url} alt={title} />
+      <p>{title}</p>
+      <button onClick={() => deleteImageG(id)} className="button-primary">
         Eliminar
       </button>
     </div>
   );
 }
+
+GifGridItem.propTypes = {
+  id: PropsTypes.string.isRequired,
+  title: PropsTypes.string.isRequired,
+  url: PropsTypes.string.isRequired,
+};
 
 export default GifGridItem;

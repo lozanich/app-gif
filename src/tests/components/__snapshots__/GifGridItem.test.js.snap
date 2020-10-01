@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas al GridItem Component Debe renderizar el componente 1`] = `
+<div
+  className="card animate__animated animate__bounce"
+>
+  <img
+    alt="Goku"
+    src="https://"
+  />
+  <p>
+    Goku
+  </p>
+  <button
+    className="button-primary"
+    onClick={[Function]}
+  >
+    Eliminar
+  </button>
+</div>
+`;

@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas en el componente GifGrid Deberia de mostrar items cuando cargan imagenes use Fetch gifs 1`] = `
+<Fragment>
+  <h2
+    className="animate__fadeInDown"
+  >
+    Goku
+  </h2>
+  <div>
+    <ol
+      className="card-grid"
+    >
+      <GifGridItem
+        deleteImageG={[Function]}
+        id="278anas"
+        key="278anas"
+        title="Una imagen"
+        url="https://"
+      />
+    </ol>
+  </div>
+</Fragment>
+`;
+
+exports[`Pruebas en el componente GifGrid Deberia de ser el snapsshot de GifGrid 1`] = `
+<Fragment>
+  <h2
+    className="animate__fadeInDown"
+  >
+    Goku
+  </h2>
+  <div
+    className="animate__animated animate__flash"
+  >
+    Cargando
+  </div>
+  <div>
+    <ol
+      className="card-grid"
+    />
+  </div>
+</Fragment>
+`;

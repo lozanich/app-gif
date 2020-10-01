@@ -6,11 +6,13 @@ function AddCategory({ setCategories }) {
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
+    console.log("handle input change", e.target.value);
   };
 
   const handleSumit = (e) => {
     e.preventDefault();
-    if (inputValue.trim().length > 2) {
+    console.log("handle submit", inputValue);
+    if (inputValue?.trim().length > 2) {
       setCategories((cat) => [inputValue, ...cat]);
       setInputValue("");
     }
